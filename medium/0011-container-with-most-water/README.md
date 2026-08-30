@@ -37,25 +37,39 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.1 MB  
-**Submitted:** 2026-08-30T11:58:04.398Z  
+**Runtime:** 61 ms (beats 34.61%)  
+**Memory:** 29.6 MB (beats 38.19%)  
+**Submitted:** 2026-08-30T12:07:07.464Z  
 
 ```py
-             width = right - left
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
 
-             water_height = min(height[left],height[right])
+        left = 0
+        right = len(height)-1
 
-             area = width * water_height
+        max_water = 0
 
-             max_water = max(max_water,area)
+        while left < right:
 
-             if height[left] < height[right]:
-                 left += 1
-             else:
-                 right -= 1
-        
 
+             width = right - left
+
+             water_height = min(height[left],height[right])
+
+             area = width * water_height
+
+             max_water = max(max_water,area)
+
+             if height[left] < height[right]:
+                 left += 1
+             else:
+                 right -= 1
+        
+        return max_water
+
+
+        
 ```
 
 ---
