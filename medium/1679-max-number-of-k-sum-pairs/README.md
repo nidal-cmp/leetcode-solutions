@@ -39,39 +39,25 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 47 ms  
-**Memory:** 19.1 MB  
-**Submitted:** 2026-08-30T12:26:35.979Z  
+**Runtime:** 483 ms (beats 19.24%)  
+**Memory:** 32.2 MB (beats 23.54%)  
+**Submitted:** 2026-08-30T12:31:50.563Z  
 
 ```py
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
+    def maxOperations(self, nums: List[int], k: int) -> int:
+        count = {}
+        operations = 0
 
-        left = 0
-        right = len(height)-1
-
-        max_water = 0
-
-        while left < right:
-
-
-             width = right - left
-
-             water_height = min(height[left],height[right])
-
-             area = width * water_height
-
-             max_water = max(max_water,area)
-
-             if height[left] < height[right]:
-                 left += 1
-             else:
-                 right -= 1
-        
-        return max_water
-
-
-        
+        for num in nums:
+            needed = k - num
+            
+            if count.get(needed,0) > 0:
+                operations += 1
+                count[needed] -= 1
+            else:
+                count[num] = count.get(num,0) + 1
+        return operations
 ```
 
 ---
