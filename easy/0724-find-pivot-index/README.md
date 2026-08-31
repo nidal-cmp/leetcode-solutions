@@ -55,8 +55,8 @@ Note: This question is the same as 1991: https://leetcode.com/problems/find-th
 
 **Language:** Python  
 **Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-08-31T08:36:29.091Z  
+**Memory:** 19.2 MB  
+**Submitted:** 2026-08-31T08:39:19.757Z  
 
 ```py
         total = sum(nums)
@@ -64,7 +64,7 @@ Note: This question is the same as 1991: https://leetcode.com/problems/find-th
         for i in range(len(nums)):
             right = total - left - nums[i]
 
-            if left == right:
+            if right == left:
 
                return i
             
