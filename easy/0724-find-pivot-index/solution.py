@@ -3,7 +3,7 @@
         for i in range(len(nums)):
             right = total - left - nums[i]
 
-            if left == right:
+            if right == left:
 
                return i
             
