@@ -1,18 +1,11 @@
 class Solution:
-    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
-        set1=set(nums1)
-        set2=set(nums2)
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        count = {}
 
-        answer1 = []
-        answer2 = []
+        for num in arr:
+            count[num] = count.get(num,0)+1
 
+        frequencies = list(count.values())
 
-        for num in set1:
-            if num not in set2:
-                answer1.append(num)
+        return len(frequencies) == len(set(frequencies))
         
-        for num in set2:
-            if num not in set1:
-                answer2.append(num)
-        
-        return [answer1,answer2]
