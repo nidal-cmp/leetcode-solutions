@@ -54,25 +54,26 @@ Note: This question is the same as 1991: https://leetcode.com/problems/find-th
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-08-31T08:39:19.757Z  
+**Runtime:** 7 ms (beats 54.30%)  
+**Memory:** 20.4 MB (beats 23.48%)  
+**Submitted:** 2026-08-31T08:39:27.753Z  
 
 ```py
-        total = sum(nums)
-        left = 0
-        for i in range(len(nums)):
-            right = total - left - nums[i]
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        total = sum(nums)
+        left = 0
+        for i in range(len(nums)):
+            right = total - left - nums[i]
 
-            if right == left:
+            if right == left:
 
-               return i
-            
-            left += nums[i]
+               return i
+            
+            left += nums[i]
 
-        return -1
-        
-
+        return -1
+        
 ```
 
 ---
