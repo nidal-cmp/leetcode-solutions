@@ -56,18 +56,22 @@ Note: This question is the same as 1991: https://leetcode.com/problems/find-th
 **Language:** Python  
 **Runtime:** 0 ms  
 **Memory:** 19.3 MB  
-**Submitted:** 2026-08-31T08:34:20.898Z  
+**Submitted:** 2026-08-31T08:36:29.091Z  
 
 ```py
-class Solution:
-    def pivotIndex(self, nums: List[int]) -> int:
         total = sum(nums)
         left = 0
         for i in range(len(nums)):
             right = total - left - nums[i]
 
             if left == right:
+
                return i
+            
+            left += nums[i]
+
+        return -1
+        
 
 ```
 
