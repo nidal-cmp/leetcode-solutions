@@ -6,8 +6,8 @@
 
 | Metric | Count |
 |--------|-------|
-| Total Solved | 12 |
-| Easy | 8 |
+| Total Solved | 13 |
+| Easy | 9 |
 | Medium | 4 |
 | Hard | 0 |
 | Current Streak | 2 days |
@@ -17,7 +17,7 @@
 
 | Language | Solutions |
 |----------|-----------|
-| Python | 12 |
+| Python | 13 |
 
 ---
-*Last updated: 2026-08-31T08:51:52.190Z*
+*Last updated: 2026-08-31T09:10:26.295Z*
