@@ -41,26 +41,30 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.4 MB  
-**Submitted:** 2026-08-31T08:47:15.906Z  
+**Runtime:** 3 ms (beats 94.22%)  
+**Memory:** 19.5 MB (beats 22.15%)  
+**Submitted:** 2026-08-31T08:51:48.688Z  
 
 ```py
 class Solution:
-    def pivotIndex(self, nums: List[int]) -> int:
-        total = sum(nums)
-        left = 0
-        for i in range(len(nums)):
-            right = total - left - nums[i]
+    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
+        set1=set(nums1)
+        set2=set(nums2)
 
-            if right == left:
+        answer1 = []
+        answer2 = []
 
-               return i
-            
-            left += nums[i]
 
-        return -1
+        for num in set1:
+            if num not in set2:
+                answer1.append(num)
         
+        for num in set2:
+            if num not in set1:
+                answer2.append(num)
+        
+        return [answer1,answer2]
+
 ```
 
 ---
