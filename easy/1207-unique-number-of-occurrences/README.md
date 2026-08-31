@@ -35,30 +35,22 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.5 MB  
-**Submitted:** 2026-08-31T09:10:22.429Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 19.1 MB (beats 95.94%)  
+**Submitted:** 2026-08-31T09:16:04.679Z  
 
 ```py
 class Solution:
-    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
-        set1=set(nums1)
-        set2=set(nums2)
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        count = {}
 
-        answer1 = []
-        answer2 = []
+        for num in arr:
+            count[num] = count.get(num,0)+1
 
+        frequencies = list(count.values())
 
-        for num in set1:
-            if num not in set2:
-                answer1.append(num)
+        return len(frequencies) == len(set(frequencies))
         
-        for num in set2:
-            if num not in set1:
-                answer2.append(num)
-        
-        return [answer1,answer2]
-
 ```
 
 ---
