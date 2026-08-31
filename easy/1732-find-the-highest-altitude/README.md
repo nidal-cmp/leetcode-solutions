@@ -34,23 +34,22 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-08-31T08:22:10.714Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 19.2 MB (beats 52.13%)  
+**Submitted:** 2026-08-31T08:23:58.621Z  
 
 ```py
-class Solution:
-    def largestAltitude(self, gain: List[int]) -> int:
-        current = 0
-        highest = 0
+class Solution:
+    def largestAltitude(self, gain: List[int]) -> int:
+        current = 0
+        highest = 0
 
-        for x in gain:
-            current += x
-            highest = max(highest , current)
+        for x in gain:
+            current += x
+            highest = max(highest , current)
 
-        return highest
-        
-
+        return highest
+        
 ```
 
 ---
