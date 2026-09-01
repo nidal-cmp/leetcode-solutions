@@ -1,13 +1,19 @@
 class Solution:
-    def removeStars(self, s: str) -> str:
-        stack = []
+    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+    
+     stack = []
 
-        for char in s:
-            if char == "*":
+     for x in asteroids:
+ 
+        while stack and stack[-1] > 0 and x < 0:
+            if stack[-1] < -x:
                stack.pop()
-            else:
-                stack.append(char)
+               continue
+            elif stack[-1] == -x:
+                stack.pop()
+            break
+        else:
+             stack.append(x)
 
-        return "".join(stack)
-
-                    
+     return stack
+            
