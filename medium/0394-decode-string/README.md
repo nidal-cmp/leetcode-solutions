@@ -44,17 +44,21 @@ Constraints:
 
 **Language:** Python  
 **Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-09-01T14:01:25.157Z  
+**Memory:** 19.5 MB  
+**Submitted:** 2026-09-01T14:02:16.800Z  
 
 ```py
-                previous,repeat = stack.pop()
-                current=previous+current*repeat
+
+                num = 0
+                current = ""
+            elif ch == ']':
+                previous, repeat = stack.pop()
+                current = previous + current * repeat
 
             else:
                 current += ch
 
-        return ch
+        return current
 
 
 ```
