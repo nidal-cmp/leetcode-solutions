@@ -50,30 +50,24 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 7 ms (beats 57.38%)  
-**Memory:** 20.3 MB (beats 70.53%)  
-**Submitted:** 2026-09-01T13:10:18.674Z  
+**Runtime:** 0 ms  
+**Memory:** 19.4 MB  
+**Submitted:** 2026-09-01T13:07:31.278Z  
 
 ```py
 class Solution:
-    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
-    
-     stack = []
+    def removeStars(self, s: str) -> str:
+        stack = []
 
-     for x in asteroids:
- 
-        while stack and stack[-1] > 0 and x < 0:
-            if stack[-1] < -x:
+        for char in s:
+            if char == "*":
                stack.pop()
-               continue
-            elif stack[-1] == -x:
-                stack.pop()
-            break
-        else:
-             stack.append(x)
+            else:
+                stack.append(char)
 
-     return stack
-            
+        return "".join(stack)
+
+                    
 ```
 
 ---
