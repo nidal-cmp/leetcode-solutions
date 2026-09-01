@@ -1,8 +1,12 @@
-                previous,repeat = stack.pop()
-                current=previous+current*repeat
+
+                num = 0
+                current = ""
+            elif ch == ']':
+                previous, repeat = stack.pop()
+                current = previous + current * repeat
 
             else:
                 current += ch
 
-        return ch
+        return current
 
