@@ -6,9 +6,9 @@
 
 | Metric | Count |
 |--------|-------|
-| Total Solved | 26 |
+| Total Solved | 27 |
 | Easy | 10 |
-| Medium | 16 |
+| Medium | 17 |
 | Hard | 0 |
 | Current Streak | 3 days |
 | Last Synced | 9/1/2026 |
@@ -17,7 +17,7 @@
 
 | Language | Solutions |
 |----------|-----------|
-| Python | 26 |
+| Python | 27 |
 
 ---
-*Last updated: 2026-09-01T13:12:34.096Z*
+*Last updated: 2026-09-01T13:15:33.909Z*
