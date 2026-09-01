@@ -1,30 +1,13 @@
 class Solution:
-    def equalPairs(self, grid: List[List[int]]) -> int:
-        count = {}
+    def removeStars(self, s: str) -> str:
+        stack = []
 
-        for row in grid:
-            row = tuple(row)
-            count[row] = count.get(row,0)+1
-        
-        answer = 0
+        for char in s:
+            if char == "*":
+               stack.pop()
+            else:
+                stack.append(char)
 
-        n = len(grid)
-        
-         
-        
-        for col in range(n):
-            column = []
+        return "".join(stack)
 
-            for row in range(n):
-                column.append(grid[row][col])
-            
-            column = tuple(column)
-
-            answer += count.get(column,0)
-
-        return answer
-
-
-         
-
-        
+                    
