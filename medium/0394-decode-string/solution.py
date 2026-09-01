@@ -1,6 +1,4 @@
 
-                num = 0
-                current = ""
             elif ch == ']':
                 previous, repeat = stack.pop()
                 current = previous + current * repeat
