@@ -38,30 +38,41 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.1 MB  
-**Submitted:** 2026-09-01T11:53:34.516Z  
+**Runtime:** 25 ms (beats 51.20%)  
+**Memory:** 24.4 MB (beats 80.70%)  
+**Submitted:** 2026-09-01T11:53:44.475Z  
 
 ```py
 class Solution:
-    def closeStrings(self, word1: str, word2: str) -> bool:
-        
+    def equalPairs(self, grid: List[List[int]]) -> int:
         count = {}
 
-        if set(word1) != set(word2):
-           
-           return False
+        for row in grid:
+            row = tuple(row)
+            count[row] = count.get(row,0)+1
         
-        count1 = {}
-        count2 = {}
+        answer = 0
 
-        for char in word1:
-            count1[char]=count1.get(char,0)+1
+        n = len(grid)
+        
+         
+        
+        for col in range(n):
+            column = []
 
-        for char in word2:
-            count2[char]=count2.get(char,0)+1
+            for row in range(n):
+                column.append(grid[row][col])
+            
+            column = tuple(column)
 
-        return sorted(count1.values()) == sorted(count2.values())
+            answer += count.get(column,0)
+
+        return answer
+
+
+         
+
+        
 ```
 
 ---
