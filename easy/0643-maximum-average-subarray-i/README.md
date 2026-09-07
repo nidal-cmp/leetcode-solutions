@@ -35,19 +35,15 @@ Constraints:
 **Language:** Python  
 **Runtime:** 0 ms  
 **Memory:** 19.3 MB  
-**Submitted:** 2026-09-07T05:13:38.860Z  
+**Submitted:** 2026-09-07T05:14:02.544Z  
 
 ```py
-    def findMaxAverage(self, nums: List[int], k: int) -> float:
-        
-        window_sum = sum(nums[:k])
-        max_sum = window_sum
 
         for i in range(k,len(nums)):
             window_sum = window_sum + nums[i]
             window_sum = window_sum - nums[i-k]
 
-        max_sum = max(max_sum,window_sum)
+            max_sum = max(max_sum,window_sum)
 
         return max_sum/k
 
