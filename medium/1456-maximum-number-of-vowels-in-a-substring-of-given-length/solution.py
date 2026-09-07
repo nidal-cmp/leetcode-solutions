@@ -1,13 +1,22 @@
 class Solution:
-    def findMaxAverage(self, nums: List[int], k: int) -> float:
+    def maxVowels(self, s: str, k: int) -> int:
         
-        window_sum = sum(nums[:k])
-        max_sum = window_sum
+        vowels = 'aeiou'
+        count = 0
 
-        for i in range(k,len(nums)):
-            window_sum = window_sum + nums[i]
-            window_sum = window_sum - nums[i-k]
+        for i in range(k):
+            if s[i] in vowels:
+                count+=1
+            
+        max_count=count
 
-            max_sum = max(max_sum,window_sum)
+        for i in range(k,len(s)):
+            if s[i] in vowels:
+                count+=1
 
-        return max_sum/k
+            if s[i-k] in vowels:
+                count-=1 
+
+            max_count = max (max_count, count)
+
+        return max_count
