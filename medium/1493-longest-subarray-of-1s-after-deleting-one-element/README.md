@@ -41,8 +41,8 @@ Constraints:
 
 **Language:** Python  
 **Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-09-07T09:01:17.816Z  
+**Memory:** 19.3 MB  
+**Submitted:** 2026-09-07T09:07:58.377Z  
 
 ```py
 class Solution:
