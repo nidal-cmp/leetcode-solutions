@@ -6,14 +6,14 @@
 class Solution:
     def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
-        if not head.next:
+        if not head or not head.next:
             return None
 
         odd = head
         even = head.next
         even_head = even
 
-        while even and even_head:
+        while even and even.next:
             odd.next= even.next
             odd = odd.next
 
