@@ -36,8 +36,8 @@ Constraints:
 
 **Language:** Python  
 **Runtime:** 0 ms  
-**Memory:** 19.3 MB  
-**Submitted:** 2026-09-09T13:33:32.186Z  
+**Memory:** 19.1 MB  
+**Submitted:** 2026-09-09T13:37:15.646Z  
 
 ```py
 # Definition for singly-linked list.
