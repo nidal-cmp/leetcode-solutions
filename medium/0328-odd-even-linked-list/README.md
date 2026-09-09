@@ -37,7 +37,7 @@ Constraints:
 **Language:** Python  
 **Runtime:** 0 ms  
 **Memory:** 19.1 MB  
-**Submitted:** 2026-09-09T13:37:15.646Z  
+**Submitted:** 2026-09-09T13:37:46.362Z  
 
 ```py
 # Definition for singly-linked list.
@@ -48,14 +48,14 @@ Constraints:
 class Solution:
     def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
-        if not head.next:
+        if not head or not head.next:
             return None
 
         odd = head
         even = head.next
         even_head = even
 
-        while even and even_head:
+        while even and even.next:
             odd.next= even.next
             odd = odd.next
 
