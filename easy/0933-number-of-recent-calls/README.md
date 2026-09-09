@@ -43,9 +43,9 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.1 MB  
-**Submitted:** 2026-09-09T08:48:43.845Z  
+**Runtime:** 33 ms (beats 74.45%)  
+**Memory:** 24.8 MB (beats 31.18%)  
+**Submitted:** 2026-09-09T08:53:51.803Z  
 
 ```py
 class RecentCounter:
@@ -57,7 +57,10 @@ class RecentCounter:
     def ping(self, t: int) -> int:
         self.requests.append(t)
 
-        while self.requests[0] 
+        while self.requests[0] < t - 3000:
+            self.requests.popleft()
+
+        return len(self.requests)
         
 
 
