@@ -51,22 +51,31 @@ Constraints:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-09-09T10:17:25.699Z  
+**Runtime:** 68 ms (beats 92.18%)  
+**Memory:** 62.2 MB (beats 78.74%)  
+**Submitted:** 2026-09-09T10:17:32.683Z  
 
 ```py
-#         self.val = val
-#         self.next = next
-class Solution:
-    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if not head.next:
-            return None
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head.next:
+            return None
 
-        slow = head
-        fast = slow.next.next
+        slow = head
+        fast = slow.next.next
 
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
 
+        slow.next = slow.next.next
+        return head
+     
 ```
 
 ---
