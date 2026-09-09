@@ -1,28 +1,20 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
-    def predictPartyVictory(self, senate: str) -> str:
-        n = len(senate)
+    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head.next:
+            return none
 
-        radiant = deque()
-        dire = deque()
+        slow = head
+        fast = slow.next.next
 
-        for i in range(n):
-            if senate[i] == 'R':
-                radiant.append(i)
-            else:
-                dire.append(i)
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
 
-        while radiant and dire:
-            r = radiant.popleft()
-            d = dire.popleft()
-
-            if r < d:
-                radiant.append(r+n)
-            else:
-                dire.append(d+n)
-
-        if radiant:
-                return "Radiant"
-            
-        else:
-
-            return "Dire"
+        slow.next = slow.next.next
+        return head
+     
