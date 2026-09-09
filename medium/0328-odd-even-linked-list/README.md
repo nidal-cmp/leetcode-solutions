@@ -37,19 +37,18 @@ Constraints:
 **Language:** Python  
 **Runtime:** 0 ms  
 **Memory:** 19.3 MB  
-**Submitted:** 2026-09-09T10:27:32.977Z  
+**Submitted:** 2026-09-09T10:32:01.158Z  
 
 ```py
 
+        if not head.next:
+            return None
+
         odd = head
-        even = odd.next
+        even = head.next
 
-        while odd and even:
-            odd = odd.next.next
-            even = even.next.next
-
-        return head
-        
+        while even and even_head:
+        even_head = even
 
 ```
 
