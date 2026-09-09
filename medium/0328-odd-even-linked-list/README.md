@@ -37,19 +37,35 @@ Constraints:
 **Language:** Python  
 **Runtime:** 0 ms  
 **Memory:** 19.3 MB  
-**Submitted:** 2026-09-09T10:32:01.158Z  
+**Submitted:** 2026-09-09T13:33:32.186Z  
 
 ```py
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
-        if not head.next:
-            return None
+        if not head.next:
+            return None
 
-        odd = head
-        even = head.next
+        odd = head
+        even = head.next
+        even_head = even
 
-        while even and even_head:
-        even_head = even
+        while even and even_head:
+            odd.next= even.next
+            odd = odd.next
 
+            even.next = odd.next
+            even = even.next
+
+        odd.next = even_head
+
+        return head
+        
 ```
 
 ---
