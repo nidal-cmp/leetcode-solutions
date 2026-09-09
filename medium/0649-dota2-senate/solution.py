@@ -1,19 +1,28 @@
-class RecentCounter:
+class Solution:
+    def predictPartyVictory(self, senate: str) -> str:
+        n = len(senate)
 
-    def __init__(self):
-        self.requests = deque()
-        
+        radiant = deque()
+        dire = deque()
 
-    def ping(self, t: int) -> int:
-        self.requests.append(t)
+        for i in range(n):
+            if senate[i] == 'R':
+                radiant.append(i)
+            else:
+                dire.append(i)
 
-        while self.requests[0] < t - 3000:
-            self.requests.popleft()
+        while radiant and dire:
+            r = radiant.popleft()
+            d = dire.popleft()
 
-        return len(self.requests)
-        
+            if r < d:
+                radiant.append(r+n)
+            else:
+                dire.append(d+n)
 
+        if radiant:
+                return "Radiant"
+            
+        else:
 
-# Your RecentCounter object will be instantiated and called as such:
-# obj = RecentCounter()
-# param_1 = obj.ping(t)
+            return "Dire"
