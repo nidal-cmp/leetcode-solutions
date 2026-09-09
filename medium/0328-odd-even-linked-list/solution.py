@@ -1,10 +1,9 @@
 
+        if not head.next:
+            return None
+
         odd = head
-        even = odd.next
+        even = head.next
 
-        while odd and even:
-            odd = odd.next.next
-            even = even.next.next
-
-        return head
-        
+        while even and even_head:
+        even_head = even
